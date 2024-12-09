@@ -1,0 +1,45 @@
+<div class="container my-4">
+  <div class="row">
+    <div class="col-12" *ngIf="subreddit">
+      <div class="card subreddit-detail-card">
+        <!-- Header Image -->
+        <img [src]="subreddit.data.attributes.header_img || 'https://res.cloudinary.com/dafsjo7al/image/upload/v1733720171/gwhn4eevwdc51_bno7rh.png'"  class="card-img-top header-img" alt="Header de {{ subreddit.data.attributes.name }}">
+
+        <!-- Icon and Title Section -->
+        <div class="card-body">
+          <div class="d-flex align-items-center mb-3">
+            <img [src]="subreddit.data.attributes.icon_img || 'https://res.cloudinary.com/dafsjo7al/image/upload/v1733720171/gwhn4eevwdc51_bno7rh.png'" class="rounded-circle detail-icon-img me-3" alt="Icono de {{ subreddit.data.attributes.name }}">
+            <h3 class="card-title">{{ subreddit.data.attributes.title }}</h3>
+          </div>
+
+          <!-- Subscribers and Metadata -->
+          <p class="text-muted mb-3">{{ subreddit.data.attributes.subscribers | number }} suscriptores</p>
+
+          <!-- Public Description -->
+          <p class="card-text">{{ subreddit.data.attributes.public_description }}</p>
+
+          <div class="card-text mt-3" [innerHTML]="safeDescriptionHtml">
+            <!-- Contenido de description_html -->
+          </div>
+
+          <!-- Metadata Badges -->
+          <div class="mt-4">
+            <span class="badge bg-primary me-2" *ngIf="subreddit.data.attributes.key_color" [style.backgroundColor]="subreddit.data.attributes.key_color">
+              Key Color
+            </span>
+            <span class="badge bg-secondary me-2" *ngIf="subreddit.data.attributes.primary_color" [style.backgroundColor]="subreddit.data.attributes.primary_color">
+              Primary Color
+            </span>
+            <span class="badge bg-info me-2" *ngIf="subreddit.data.attributes">
+              Idioma: {{ subreddit.data.relationships.attributes.lang }}
+            </span>
+          </div>
+
+           <div class="text-center mt-4">
+        <button class="btn btn-primary me-2" (click)="goBack()">Volver Atrás</button>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

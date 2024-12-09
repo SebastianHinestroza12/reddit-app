@@ -1,0 +1,50 @@
+<div class="container my-4">
+  <!-- Estado de Carga -->
+  <div *ngIf="loading" class="text-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div>
+  </div>
+
+  <!-- Estado de Error -->
+  <div *ngIf="error" class="alert alert-danger text-center">
+    {{ error }}
+  </div>
+
+  <!-- Lista de Subreddits -->
+  <div class="row" *ngIf="!loading && !error && subreddits">
+    <div class="col-md-4 mb-4" *ngFor="let subreddit of subreddits.data">
+      <div class="card subreddit-card h-100" (click)="redirectToShowSubredditDetail(subreddit.id)">
+        <!-- Banner Image -->
+        <img
+          [src]="subreddit.attributes.banner_img || 'https://res.cloudinary.com/dafsjo7al/image/upload/v1733720171/gwhn4eevwdc51_bno7rh.png'"
+          class="card-img-top banner-img"
+          alt="Banner de {{ subreddit.attributes.name }}"
+          loading="lazy"
+        />
+
+        <!-- Icon and Title Section -->
+        <div class="card-body d-flex flex-column">
+          <div class="d-flex align-items-center mb-3">
+            <img
+              [src]="subreddit.attributes.icon_img || 'https://res.cloudinary.com/dafsjo7al/image/upload/v1733720359/reddit-icon2825.logowik.com_1_bqyrj0.webp'"
+              class="rounded-circle icon-img me-3"
+              alt="Icono de {{ subreddit.attributes.name }}"
+              loading="lazy"
+            />
+            <h5 class="card-title mb-0">{{ subreddit.attributes.name.toUpperCase() }}</h5>
+          </div>
+
+          <!-- Public Description -->
+          <p class="card-text description">
+            {{ subreddit.attributes.public_description || 'Reddit is a network of communities where people can dive into their interests, hobbies and passions.' }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!loading && !error && !subreddits.data.length" class="text-center">
+    <p>No se encontraron subreddits.</p>
+  </div>
+</div>
