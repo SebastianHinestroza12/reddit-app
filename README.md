@@ -2,6 +2,40 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.4.
 
+## Requisitos
+
+Antes de empezar, asegúrate de tener instalados los siguientes requisitos:
+
+- **Node.js** (versión 14 o superior)
+- **Git** (Para clonar el repositorio.)
+- **Angular CLI** instalado globalmente. Si no lo tienes, instálalo ejecutando el siguiente comando: 
+```bash 
+npm install -g @angular/cli
+```
+
+## Instalación
+
+### 1. Clonar el Repositorio
+
+Clona el proyecto desde GitHub:
+
+```bash
+git clone https://github.com/SebastianHinestroza12/reddit-app.git
+
+cd reddit-app
+```
+
+### 2. Instalar dependencias
+
+Instala las dependencias necesarias utilizando npm:
+
+```bash
+npm install
+```
+### 3. Servidor
+
+**Asegurate de tener corriendo el servidor**
+
 ## Development server
 
 To start a local development server, run:
@@ -10,50 +44,18 @@ To start a local development server, run:
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Vista Previa
 
-## Code scaffolding
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://res.cloudinary.com/dafsjo7al/image/upload/v1733728506/iPhone-12-PRO-localhost_2_g3qw2t.png" alt="Currencies" style="width: 48%;">
+  <img src="https://res.cloudinary.com/dafsjo7al/image/upload/v1733728506/Samsung-Galaxy-S20-localhost_1_hyvg9x.png" alt="Languages" style="width: 48%;">
+</div>
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://res.cloudinary.com/dafsjo7al/image/upload/v1733728506/iPhone-12-PRO-localhost_3_il59ca.png" alt="Currencies" style="width: 48%;">
+  <img src="https://res.cloudinary.com/dafsjo7al/image/upload/v1733728506/Xiaomi-12-localhost_iq98tr.png" alt="Languages" style="width: 48%;">
+</div>
 
-```bash
-ng generate component component-name
-```
+## Authors
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [@SebastianHinestroza12](https://github.com/SebastianHinestroza12)
